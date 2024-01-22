@@ -17,5 +17,9 @@ public interface ParentService {
 
 
     void deleteParent(Long parentId);
+
+
+
+    ParentsDto findUserByEmail(String email);
 }
 

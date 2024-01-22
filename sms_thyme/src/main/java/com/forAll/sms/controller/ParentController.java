@@ -1,6 +1,7 @@
 package com.forAll.sms.controller;
 
 import com.forAll.sms.dto.ParentsDto;
+import com.forAll.sms.entity.User;
 import com.forAll.sms.service.ParentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -45,6 +46,8 @@ public class ParentController {
             model.addAttribute("parent", parentDto);
             return "create_parent";
         }
+
+
         parentService.createParent(parentDto);
         return "redirect:/parent/all";
     }

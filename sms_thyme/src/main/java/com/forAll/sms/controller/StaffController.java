@@ -171,7 +171,7 @@ public class StaffController {
         return mav;
     }
 
-    @PostMapping("/{parentId}/update")
+    @PostMapping("/parent/{parentId}/update")
     public String updateParent(@PathVariable("parentId") Long parentId,
                                @Valid @ModelAttribute("parent") ParentsDto parentDto,
                                BindingResult result,

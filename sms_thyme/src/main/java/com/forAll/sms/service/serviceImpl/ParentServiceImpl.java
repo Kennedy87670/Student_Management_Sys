@@ -34,6 +34,11 @@ public class ParentServiceImpl implements ParentService {
         parentRepository.deleteById(parentId);
     }
 
+    @Override
+    public ParentsDto findUserByEmail(String email) {
+        return parentRepository.findByEmail(email);
+    }
+
 
     @Override
     public void createParent(ParentsDto parentDto) {

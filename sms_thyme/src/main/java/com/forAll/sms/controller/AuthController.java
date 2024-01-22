@@ -4,6 +4,8 @@ import com.forAll.sms.dto.StaffDto;
 import com.forAll.sms.dto.UserDto;
 import com.forAll.sms.entity.User;
 import com.forAll.sms.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.Banner;
@@ -44,6 +46,12 @@ public class AuthController {
         return mav;
 
     }
+
+//    @PostMapping("/logout")
+//    public String logout(HttpServletRequest request, HttpServletResponse response) {
+//        // Perform logout actions
+//        return "redirect:/login?logout";
+//    }
 
 
     // handler method to handle user registration form submit request

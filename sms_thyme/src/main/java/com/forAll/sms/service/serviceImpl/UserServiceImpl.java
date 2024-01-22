@@ -9,6 +9,7 @@ import com.forAll.sms.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
     @Override
     public void saveUser(UserDto userDto ) {
 
@@ -33,7 +35,11 @@ public class UserServiceImpl implements UserService {
         user.setPassword(userDto.getPassword());
 
         // encrypt the password using spring security
-        user.setPassword(userDto.getPassword());
+        user.setPassword(
+                passwordEncoder.encode(
+                userDto.getPassword()
+                )
+        );
 
         Role role = roleRepository.findByName("STAFF");
         if(role == null){
@@ -68,7 +74,7 @@ public class UserServiceImpl implements UserService {
 
     private Role checkRoleExist(){
         Role role = new Role();
-        role.setName("ROLE_ADMIN");
+        role.setName("STAFF");
         return roleRepository.save(role);
     }
 

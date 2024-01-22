@@ -34,6 +34,8 @@ public class User  {
     private String email;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
+    private UserType userType;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(

@@ -54,17 +54,29 @@
               <li>
                 <a class="nav-link" th:href="@{/student/list}">Student List<span class="sr-only"></span></a>
               </li>
+
             </ul>
           </li>
+          <div>
+            <a class="nav-link text-white" th:href="@{/logout}" id="navbarDar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Logout
+            </a>
+            <!--        <a class="nav-link text-white" th:href="@{/logout}" th:if="${#authentication.principal != null}" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <!--          Logout-->
+            <!--        </a>-->
+
+          </div>
         </ul>
 
       </div>
       <div>
-        <li class="nav-item ">
           <a class="nav-link text-white" th:href="@{/logout}" id="navbarDark" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Logout
           </a>
-        </li>
+<!--        <a class="nav-link text-white" th:href="@{/logout}" th:if="${#authentication.principal != null}" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--          Logout-->
+<!--        </a>-->
+
       </div>
     </div>
   </nav>
