@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -44,7 +45,7 @@ public class UserServiceImpl implements UserService {
         Role role = roleRepository.findByName("STAFF");
         if(role == null){
             role = checkRoleExist();
-        }  user.setRoles(Arrays.asList(role));
+        }  user.setRoles((Set<Role>) Arrays.asList(role));
         userRepository.save(user);
     }
 

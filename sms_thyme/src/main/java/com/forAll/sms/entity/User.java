@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldNameConstants;
 
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 
 @AllArgsConstructor
@@ -34,6 +32,7 @@ public class User  {
     private String email;
     @Column(nullable = false)
     private String password;
+    private boolean enabled;
     @Column(nullable = false)
     private UserType userType;
 
@@ -43,6 +42,6 @@ public class User  {
             joinColumns = { @JoinColumn(name = "user_id", referencedColumnName = "id") },
             inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "id") }
     )
-    private List<Role> roles = new ArrayList<>();
+    private Set<Role> roles = new HashSet<>();
 
 }
