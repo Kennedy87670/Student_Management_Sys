@@ -35,7 +35,7 @@ public class SetUpDataLoader implements ApplicationListener<ContextRefreshedEven
         Privilege createPrivilege = createPrivilegeIfNotFound("CREATE_PRIVILEGE");
         Privilege deletePrivilege = createPrivilegeIfNotFound("DELETE_PRIVILEGE");
 
-        List<Privilege> adminPrivileges = Arrays.asList(readPrivilege, writePrivilege, editPrivilege, deletePrivilege);
+        List<Privilege> adminPrivileges = Arrays.asList(readPrivilege, writePrivilege, editPrivilege, deletePrivilege, createPrivilege);
         List<Privilege> staffPrivileges = Arrays.asList(readPrivilege, writePrivilege, editPrivilege);
         List<Privilege> parentPrivileges = Arrays.asList(readPrivilege, writePrivilege);
         List<Privilege> studentPrivileges = Arrays.asList(readPrivilege);

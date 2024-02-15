@@ -31,24 +31,7 @@ public class StudentServiceImpl implements StudentService {
     public void createStudent(StudentDto studentDto)
 //            throws UserNameExistException
     {
-//        Student student = StudentMapper.mapToStudent(studentDto);
-//        studentRepository.save(student);
 
-
-//    @Override
-//    public StudentDto getStudentById(Long studentId) {
-//        Student student = studentRepository.findById(studentId).get();
-//        StudentDto studentDto = StudentMapper.maptToStudentDto(student);
-//        return studentDto;
-//    }
-
-        // Check if the username already exists
-//        if (isUsernameExists(studentDto.getUserName())) {
-//            // Handle the case where the username already exists
-////            throw new UserNameExistException("Username already exists: " + studentDto.getUserName());
-//        }
-
-        // If the username doesn't exist, proceed to create the student
         Student student = StudentMapper.mapToStudent(studentDto);
         studentRepository.save(student);
     }

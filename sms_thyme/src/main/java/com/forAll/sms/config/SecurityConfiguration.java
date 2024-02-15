@@ -93,23 +93,6 @@ public RoleHierarchy roleHierarchy() {
 
 
 
-//        http.csrf().disable()
-//                .authorizeRequests()
-//                .requestMatchers("/staff", "/student", "/parent").authenticated()
-//                .requestMatchers("/register/**", "/index").permitAll()
-//                .requestMatchers("/user").hasRole("STAFF")
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .loginProcessingUrl("/login")
-//                .defaultSuccessUrl("/")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .logoutSuccessUrl("/login");
-
-
 
 
 
